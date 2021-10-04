@@ -1,0 +1,25 @@
+<canvas id='canvas' width=600 height=400>
+<script>
+
+function polygon(a, colorBorde, colorRelleno) {   // a = [20, 12, 34, 56, 78, 90, 112, 167, 34, 56]
+  ctx.beginPath()
+  ctx.strokeStyle = colorBorde
+  ctx.fillStyle = colorRelleno
+  ctx.moveTo(a[0],a[1])
+  for (i=2; i < a.length; i+=2)
+    ctx.lineTo(a[i],a[i+1]);
+  ctx.closePath()
+  ctx.stroke()
+  ctx.fill()
+}
+
+
+ var canvas = document.getElementById('canvas')
+  var ctx = canvas.getContext('2d');
+
+  ctx.strokeStyle = '#00FF00';
+  ctx.strokeRect(0,0,canvas.width, canvas.height)
+
+polygon([346,5,540,144,468,370,224,368,151,144],' rgba(0,162,232)',' rgba(0,162,232)') // con numeros enteros cada uno del respectivo canal rgb
+polygon([548,240,547,291,6,192,14,144],' #000000','#000000') // hexadecimal
+</script>
